@@ -6,4 +6,4 @@
 
  ![Ingress](./img/ingress.png)
 
- ![Ingress config](./09_ingress.yml)
+- [Ingress config:](./09_ingress.yml)
