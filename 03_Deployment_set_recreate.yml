@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+# Метод
+kind: Deployment
+metadata:
+# имя для Deployment
+  name: my-deployment
+# Namespace в котором будут запускаться поды
+  namespace: default  
+spec:
+# Кол -во Подов
+  replicas: 2
+# Стратегия обновления удаление Replicaset1 и создание Replicaset2
+  strategy:
+    type: Recreate
+# Селектор поиска своих Подов 
+  selector:
+    matchLabels:
+# Названия для поиска подов
+      name: my-app
+# Шаблон Pod'ов
+  template:
+    metadata:
+      labels:
+        name: my-app
+# Спецификация запускаемого Контейнера
+    spec: 
+      containers:
+        - name: nginx
+          image: nginx:1.12
+          ports:
+            - containerPort: 80

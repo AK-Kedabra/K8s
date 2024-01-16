@@ -1,0 +1,37 @@
+# Версия API
+apiVersion: apps/v1
+# Тип сущьности          
+kind: ReplicaSet
+# Метаданные             
+metadata:
+# Название пода                    
+  name: my-replicaset
+# Пространство имен
+  namespace: default
+# Спецификация
+spec:
+# Кол-во Контейнеров
+  replicas: 3
+  selector:
+    matchLabels:
+# Селектор для поиска "Своих" Pod'ов 
+      app: my-app
+# Шаблон Pod'a
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - image: nginx:1.13
+          name: nginx
+          ports:
+            - containerPort: 80
+
+
+# ReplicaSet: Обновление верчий образа
+
+  # $ kubectl apply - f /path/to/replicaset.yml
+  # $ kubectl describe pod $name_pods
+  # $ kubectl describe replica-set $name_replicaset
+  # $ kubectl delete replicaset $name_replicaset
