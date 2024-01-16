@@ -4,7 +4,7 @@
 ### Пример
 
     apiVersion: v1                                                      apiVersion: v1
-        kind Service                                                        kind Service
+        kind: Service                                                        kind Service
         metadata:                                                           metadata:
             name: my-postgresql                                                 name: my-postgresql
             namespace: default                                                  namespace: default

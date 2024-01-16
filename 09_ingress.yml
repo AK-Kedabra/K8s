@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: my-ingress
 spec:
-rules:
+  rules:
   - host: foo.mydomen.com
     http:
       path:
