@@ -66,3 +66,4 @@
 
 ## Вспомогательные файлы
 - [ContainerProbes - Проверка доступности:](./k8s_objects/ContainerProbes.md)
+- [Команды Kubectl:](./KubectlComands.md)
